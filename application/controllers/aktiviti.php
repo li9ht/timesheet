@@ -80,7 +80,7 @@ class Aktiviti extends CI_Controller {
 
 		}else{
 			if($this->input->post("submit")) $this->baru(); //if xvalidate ; form baru
-			if($this->input->post("kemaskini")) $this->baru($aktiviti_id); //if xvalidate; form kemaskini	
+			if($this->input->post("kemaskini")) $this->kemaskini($aktiviti_id); //if xvalidate; form kemaskini	
 		}
 
 	}

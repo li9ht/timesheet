@@ -40,6 +40,19 @@ class Aktiviti_model extends CI_Model {
 		$query = $this->db->get("aktiviti");
 		return $query->result();
 	}
+
+	/**
+	 * kemaskini aktiviti
+	 * @param  [type] $aktiviti    [description]
+	 * @param  [type] $aktiviti_id [description]
+	 * @return [type]              [description]
+	 */
+	public function update($aktiviti,$aktiviti_id)
+	{	
+		$this->db->where("id",$aktiviti_id);
+		return $this->db->update("aktiviti",$aktiviti);
+		
+	}
 	
 
 }

@@ -49,22 +49,29 @@
 	<div class="form-group">
 		<label for="" class="col-lg-2 control-label">Kategori</label>
 		<div class="col-lg-5">
-			<select name="kategori" id="kategori" class="form-control">
-				<option value="Projek Baru">Projek Baru</option>
-				<option value="PEKA">PEKA</option>
-				<option value="Bengkel">Bengkel</option>
-				<option value="Mesyuarat">Mesyuarat</option>
-			</select>
+			<?php
+			//dropdown options
+			$kategori_option = array(
+				'Projek Baru' => 'Projek Baru',
+				'PEKA' => 'PEKA',
+				'Bengkel' => 'Bengkel',
+				'Mesyuarat' => 'Mesyuarat'
+			);
+			//generate from option and set default value
+			echo form_dropdown('kategori', $kategori_option, $aktivitiDetail->kategori,'class="form-control"');
+			?>
 		</div>		
 	</div>
 	<div class="form-group">
 		<label for="" class="col-lg-2 control-label">Status</label>
 		<div class="col-lg-5">
 			<?php
+			//dropdown options
 			$status_option = array(
 				'Siap' => 'Siap',
 				'Tidak Siap' => 'Tidak Siap'
 			);
+			//generate from option and set default value
 			echo form_dropdown('status', $status_option, $aktivitiDetail->status,'class="form-control"');
 			?>
 		</div>		
@@ -79,7 +86,7 @@
 	<!-- btn save -->
 	<div class="form-group">
 		 <div class="col-lg-offset-2 col-lg-2">
-			<input type="submit" name="submit" value="Save" class="btn btn-primary">
+			<input type="submit" name="kemaskini" value="Save" class="btn btn-primary">
 		</div>
 	</div>
 

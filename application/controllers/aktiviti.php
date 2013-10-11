@@ -57,12 +57,26 @@ class Aktiviti extends CI_Controller {
 				'isu' 		 => $this->input->post("isu")
 			);
 
-			//if simpan berjaya
-			//set session flash data untuk papar message berjaya
-			if($this->aktiviti_model->save($aktiviti_baru)){
-				$this->session->set_flashdata("message","Simpan Berjaya");
-				redirect("aktiviti/index");
+			//if tekan button kemaskini
+			if($this->input->post("kemaskini")){
+				//if kemaskini berjaya
+				//set session flash data untuk papar message berjaya
+				if($this->aktiviti_model->update($aktiviti_baru,$aktiviti_id)){
+					$this->session->set_flashdata("message","Kemaskini Berjaya");
+					redirect("aktiviti/index");
+				}
 			}
+
+			if($this->input->post("submit")){
+				//if simpan berjaya
+				//set session flash data untuk papar message berjaya
+				if($this->aktiviti_model->save($aktiviti_baru)){
+					$this->session->set_flashdata("message","Simpan Berjaya");
+					redirect("aktiviti/index");
+				}
+
+			}
+			
 
 		}else{
 			$this->baru();	

@@ -24,7 +24,9 @@
 	</thead>
 	<?php foreach ($activities as $activity) : ?>
 		<tr>
-			<td><?php echo $activity->id; ?></td>
+			<td>
+				<?php echo anchor("aktiviti/perincian/".$activity->id,$activity->id,'class="btn btn-default"') ?>
+			</td>
 			<td><?php echo $activity->ukmper; ?></td>
 			<td><?php echo $activity->masa_mula; ?></td>
 			<td><?php echo $activity->masa_tamat; ?></td>

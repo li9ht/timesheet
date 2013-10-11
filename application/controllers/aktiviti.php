@@ -115,6 +115,20 @@ class Aktiviti extends CI_Controller {
 
 	}
 
+	/**
+	 * [perincian aktiviti]
+	 * @param  [type] $aktiviti_id [id aktiviti]
+	 * @return [type]              [description]
+	 */
+	public function perincian($aktiviti_id)
+	{	
+		$aktivitiDetail = $this->aktiviti_model->getById($aktiviti_id);
+		$data["aktivitiDetail"] = $aktivitiDetail[0];
+
+		$data["content"]["1"] = $this->load->view('aktiviti/perincian', $data , TRUE);
+		$this->load->view("layout",$data);
+	}
+
 
 
 }

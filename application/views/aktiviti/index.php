@@ -34,7 +34,11 @@
 			<td><?php echo $activity->kategori; ?></td>
 			<td><?php echo $activity->status; ?></td>
 			<td><?php echo $activity->isu; ?></td>
-			<td><?php echo anchor("aktiviti/hapus/".$activity->id,"Hapus",'class="btn btn-danger"') ?></td>
+			<td>
+				<?php echo anchor("aktiviti/hapus/".$activity->id,"Hapus",'class="btn btn-danger"') ?>
+				<?php echo anchor("aktiviti/kemaskini/".$activity->id,"Kemaskini",'class="btn btn-primary"') ?>
+
+			</td>
 		</tr>
 	<?php endforeach; ?>
 </table>

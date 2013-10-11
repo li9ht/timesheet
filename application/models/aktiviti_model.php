@@ -27,6 +27,19 @@ class Aktiviti_model extends CI_Model {
 	{
 		return $this->db->delete('aktiviti', array('id' => $aktiviti_id)); 
 	}
+
+
+	/**
+	 * dapat kan aktiviti detail berdasarkan id
+	 * @param  [type] $aktiviti_id [aktiviti id]
+	 * @return [type]              [detail aktiviti]
+	 */
+	public function getById($aktiviti_id)
+	{
+		$this->db->where("id",$aktiviti_id);
+		$query = $this->db->get("aktiviti");
+		return $query->result();
+	}
 	
 
 }

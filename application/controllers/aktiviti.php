@@ -32,9 +32,11 @@ class Aktiviti extends CI_Controller {
 	}
 
 	/**
-	 * Save aktiviti baru
+	 * [simpan data]
+	 * @param  [type] $aktiviti_id [id aktiviti if kemaskini]
+	 * @return [type]              [description]
 	 */
-	public function simpan()
+	public function simpan($aktiviti_id=NULL)
 	{
 		
 		$this->form_validation->set_rules('ukmper', 'Ukmper', 'trim|required|xss_clean');
@@ -74,12 +76,11 @@ class Aktiviti extends CI_Controller {
 					$this->session->set_flashdata("message","Simpan Berjaya");
 					redirect("aktiviti/index");
 				}
-
 			}
-			
 
 		}else{
-			$this->baru();	
+			if($this->input->post("submit")) $this->baru(); //if xvalidate ; form baru
+			if($this->input->post("kemaskini")) $this->baru($aktiviti_id); //if xvalidate; form kemaskini	
 		}
 
 	}

@@ -2,7 +2,7 @@
 
 <?php echo validation_errors() ?>
 
-<?php echo form_open('aktiviti/simpan', array('class' => 'form-horizontal','role'=>'form')); ?>
+<?php echo form_open('aktiviti/simpan/'.$aktivitiDetail->id, array('class' => 'form-horizontal','role'=>'form')); ?>
 	
 	<legend>Aktiviti Baru</legend>
 	<div class="form-group">

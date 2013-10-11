@@ -60,13 +60,13 @@
 	<div class="form-group">
 		<label for="" class="col-lg-2 control-label">Status</label>
 		<div class="col-lg-5">
-			
-			<!-- select status -->
-			<select name="status" id="status" class="form-control">
-				<option value="Siap">Siap</option>
-				<option value="Tidak Siap">Tidak Siap</option>
-			</select>
-
+			<?php
+			$status_option = array(
+				'Siap' => 'Siap',
+				'Tidak Siap' => 'Tidak Siap'
+			);
+			echo form_dropdown('status', $status_option, $aktivitiDetail->status,'class="form-control"');
+			?>
 		</div>		
 	</div>
 	<div class="form-group">

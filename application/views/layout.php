@@ -47,7 +47,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><?php echo anchor("aktiviti/index","Senarai")?></li>
             <li><?php echo anchor("aktiviti/baru","Baru")?></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><?php echo anchor("login/logout","Log Keluar")?></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

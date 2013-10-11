@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Aktiviti extends CI_Controller {
+class Aktiviti extends MY_Controller {
 
 	public function __construct()
 	{
@@ -10,6 +10,7 @@ class Aktiviti extends CI_Controller {
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
 	}
 
 	public function index()

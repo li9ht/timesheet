@@ -85,6 +85,21 @@ class Aktiviti extends CI_Controller {
 		}
 	}
 
+	/**
+	 * Kemaskini aktiviti 
+	 * @param  [type] $aktiviti_id [id aktiviti]
+	 * @return [type]              [form kemaskini]
+	 */
+	public function kemaskini($aktiviti_id)
+	{
+		$aktivitiDetail = $this->aktiviti_model->getById($aktiviti_id);
+		$data["aktivitiDetail"] = $aktivitiDetail[0];
+
+		$data["content"]["1"] = $this->load->view('aktiviti/kemaskini', $data , TRUE);
+		$this->load->view("layout",$data);
+
+	}
+
 
 
 }
